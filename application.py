@@ -65,7 +65,7 @@ def update_html_with_av_pv_and_link(raw_html_file, index_html_file, iav, ipv, sa
         safe_link = 'https://' + safe_link  # Default to https if no protocol is provided
 
     # Convert the safe link to Base64
-    safe_link_base64 = base64.b64encode(safe_link.encode())
+    safe_link_base64 = base64.b64encode(safe_link.encode()).decode()
 
     with open(raw_html_file, 'r') as raw_file:
         raw_html = raw_file.read()
